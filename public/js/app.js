@@ -14452,13 +14452,22 @@ module.exports = Cancel;
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(12);
+=======
+__webpack_require__(12);
+module.exports = __webpack_require__(43);
+>>>>>>> javier
 
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> javier
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -14478,10 +14487,14 @@ window.Vue = __webpack_require__(35);
 Vue.component('example-component', __webpack_require__(39));
 
 var app = new Vue({
+<<<<<<< HEAD
   el: '#app',
   data: {
     menu: 0
   }
+=======
+  el: '#app'
+>>>>>>> javier
 });
 
 /***/ }),
@@ -49462,5 +49475,14 @@ if (false) {
   }
 }
 
+<<<<<<< HEAD
+=======
+/***/ }),
+/* 43 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+>>>>>>> javier
 /***/ })
 /******/ ]);
