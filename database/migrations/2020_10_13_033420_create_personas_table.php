@@ -15,6 +15,11 @@ class CreatePersonasTable extends Migration
     {
         Schema::create('personas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('cc');
+            $table->string('nombre');
+            $table->string('apellidos');
+            $table->integer('id_area')->unsigned();
+            $table->foreign('id_area')->references('id')->on('areas');
             $table->timestamps();
         });
     }

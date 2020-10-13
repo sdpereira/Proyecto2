@@ -1,6 +1,10 @@
 <template>
     <div>
-        
+        <h5>Área</h5>
+        <select name="" id="">
+            <option value=""></option>
+        </select>
+
     </div>
 </template>
 <script>
@@ -15,11 +19,12 @@ export default {
             titulo: "",
             buscar: "",
             criterio: 'nombre',
+            arrayAreas:[]
         }
     },
     methods:{
         listPer(){
-            let mee = this;
+            let me = this;
             var url = "/persona";
             axios.get(url).then(function(response){
                 var respuesta = response.data;
@@ -29,8 +34,19 @@ export default {
                 console.log(error);
             })
         },
+        getArea(){
+            let me = this;
+            var url = "/selectarea";
+            axios.get(url).then(function(response){
+                var respuesta = response.data;
+                me.arrayAreas = respuesta.areas.data;
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+        },
         regPer(){
-            let mee = this;
+            let me = this;
             var url = "/persona/registrar";
             axios.post(url,{
                 nombre:this.nombre
@@ -44,7 +60,7 @@ export default {
             })
         },
         actPer(){
-            let mee = this;
+            let me = this;
             var url = "/persona/actualizar";
             axios.put(url,{
                 id:this.idPer,
@@ -60,7 +76,7 @@ export default {
             })
         },
         eliminarPer(data=[]){
-            let mee = this;
+            let me = this;
             var url = "/persona/actualizar";
             axios.post(url,{
                 id:data["id"]        
