@@ -11,7 +11,7 @@
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-bag"></i>General</a>
                 <ul class="nav-dropdown-items">
                     <li @click="menu=1" class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-align-justify"></i>Componente 1</a>
+                        <a class="nav-link" href="#"><i class="fa fa-align-justify"></i>Personas</a>
                     </li>
                     <li @click="" class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-align-justify"></i>Componente 2</a>

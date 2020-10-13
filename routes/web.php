@@ -14,4 +14,5 @@
 Route::get('/', function () {
     return view('contenido/contenido');
 });
+Route::get('persona','PersonasController@index');
 Route::get('selectarea','AreasController@getArea');

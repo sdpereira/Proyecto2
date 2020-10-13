@@ -1,10 +1,34 @@
 <template>
-    <div>
+    <div id="app" class="container">
+    <div class="card-body">
+        <label >Nombre</label>
+        <input type="text">
         <h5>Área</h5>
-        <select name="" id="">
-            <option value=""></option>
+        <select v-model="idArea" >
+            <option v-for="objeto in arrayAreas" :key="objeto.id" :value="objeto.id" v-text="objeto.nombre"></option>
         </select>
-
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Área</th>
+                </tr>
+            </thead>
+            <tbody v-if="this.arrayDatos.length">
+                <tr v-for="objeto in arrayDatos" :key="objeto.id">
+                    <td v-text="objeto.nombre"></td>
+                    <td v-text="objeto.apellidos"></td>
+                    <td v-text="objeto.nomArea"></td>
+                </tr>
+            </tbody>
+            <tbody v-else>
+                <tr >
+                    <td colspan="3" >NO Existen Datos</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     </div>
 </template>
 <script>
@@ -19,7 +43,8 @@ export default {
             titulo: "",
             buscar: "",
             criterio: 'nombre',
-            arrayAreas:[]
+            arrayAreas:[],
+            idArea:0
         }
     },
     methods:{
@@ -28,7 +53,7 @@ export default {
             var url = "/persona";
             axios.get(url).then(function(response){
                 var respuesta = response.data;
-                me.arrayDatos = respuesta.personas.data;
+                me.arrayDatos = respuesta.personas;
             })
             .catch(function(error){
                 console.log(error);
@@ -39,7 +64,7 @@ export default {
             var url = "/selectarea";
             axios.get(url).then(function(response){
                 var respuesta = response.data;
-                me.arrayAreas = respuesta.areas.data;
+                me.arrayAreas = respuesta.areas;
             })
             .catch(function(error){
                 console.log(error);
@@ -49,7 +74,8 @@ export default {
             let me = this;
             var url = "/persona/registrar";
             axios.post(url,{
-                nombre:this.nombre
+                nombre:this.nombre,
+                idArea:this.idArea
             })
             .then(function(response){
                 alert("se registro correctamente");
@@ -115,8 +141,9 @@ export default {
         }
     },
     mounted(){
-        console.log('component mounted.')
-        this.listPer(1,this.criterio,this.buscar);
+        // console.log('component mounted.')
+        this.getArea();
+        this.listPer();
     }
 }
 </script>

@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Personas;
 
 class PersonasController extends Controller
 {
 
     public function index()
     {
-        $personas=Personas::orderBy('nombre','asc')->get();
-        return[
+        $personas=Personas::join('areas','personas.id_area','=','areas.id')
+        ->select('personas.id','personas.nombre','personas.apellidos','areas.nombre as nomArea')
+        ->orderBy('nombre','asc')->get();
+        return[           
             'personas'=>$personas
         ];
     }
