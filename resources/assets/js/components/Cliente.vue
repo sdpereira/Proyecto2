@@ -141,12 +141,12 @@ export default {
         abrirModal(accion,data=[]){
             switch (accion) {
                 case 'guardar':
-                    this.titulo = 'se guardo';
+                    this.titulo = 'registrar categoria';
                     this.accion = 0;
                     this.limpiar();
                     break;
                 case 'editar':
-                    this.titulo = 'se edito';
+                    this.titulo = 'editar categoria';
                     this.accion = 1;
                     this.idCat = data['id'];
                     this.nombre = data['nombre'];
