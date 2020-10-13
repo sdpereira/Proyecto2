@@ -13,6 +13,12 @@ class AreasController extends Controller
             'areas'=>$areas
         ];
     }
+    public function getArea(Request $request){
+        $areas = Areas::select('id','nombre')->orderBy('nombre','asc')->get();
+        return[
+            'areas'=>$areas
+        ];
+    }
  
     public function store(Request $request)
     {

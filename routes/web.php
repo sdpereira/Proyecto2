@@ -14,3 +14,4 @@
 Route::get('/', function () {
     return view('contenido/contenido');
 });
+Route::get('selectarea','AreasController@getArea');
