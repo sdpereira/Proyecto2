@@ -116,7 +116,7 @@ export default {
     },
     mounted(){
         console.log('component mounted.')
-        this.listPer();
+        this.listPer(1,this.criterio,this.buscar);
     }
 }
 </script>
