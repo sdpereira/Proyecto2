@@ -13,10 +13,10 @@
                     <li @click="menu=1" class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-align-justify"></i>Componente 1</a>
                     </li>
-                    <li @click="menu=1" class="nav-item">
+                    <li @click="" class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-align-justify"></i>Componente 2</a>
                     </li>
-                    <li @click="menu=1" class="nav-item">
+                    <li @click="" class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-align-justify"></i>Componente 3</a>
                     </li>
                 </ul>
