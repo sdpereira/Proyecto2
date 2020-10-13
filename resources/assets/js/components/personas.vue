@@ -46,7 +46,7 @@ export default {
         actPer(){
             let mee = this;
             var url = "/persona/actualizar";
-            axios.post(url,{
+            axios.put(url,{
                 id:this.idPer,
                 nombre:this.nombre
             })
