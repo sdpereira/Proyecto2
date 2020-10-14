@@ -1,8 +1,12 @@
 <template>
     <div id="app" class="container">
     <div class="card-body">
-        <label >Nombre</label>
-        <input type="text">
+        <!-- <label >Nombre</label>
+        <input type="text"> -->
+        <div id="app">
+        Nombre <input v-model="nombre">
+        Apellido <input v-model="apellido">
+        </div>
         <h5>Área</h5>
         <select v-model="idArea" >
             <option v-for="objeto in arrayAreas" :key="objeto.id" :value="objeto.id" v-text="objeto.nombre"></option>
@@ -35,8 +39,10 @@
 export default {
     data(){
         return{
+            // name:"",
             arrayDatos:[],
             nombre: "",
+            apellido: "",
             idPer: 0,
             modal: 0,
             accion: 0,
@@ -144,7 +150,18 @@ export default {
         // console.log('component mounted.')
         this.getArea();
         this.listPer();
-    }
+
+        if(localStorage.nombre) this.nombre = localStorage.nombre;
+        if(localStorage.apellido) this.apellido = localStorage.apellido;
+        },
+        watch:{
+            nombre(newName) {
+            localStorage.nombre = newName;
+            },
+            apellido(newSurname) {
+            localStorage.apellido = newSurname;
+            }
+        }   
 }
 </script>
 <style>
