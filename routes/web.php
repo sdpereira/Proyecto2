@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 Route::get('persona','PersonasController@index');
 Route::get('selectarea','AreasController@getArea');
+Route::get('selectarea','AreasController@getArea');
+Route::post('persona/registrar','PersonasController@store');
+Route::put('persona/actualizar','PersonasController@update');
+Route::post('persona/eliminar','PersonasController@destroy');
+
