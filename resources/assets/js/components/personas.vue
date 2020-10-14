@@ -187,7 +187,7 @@ export default {
                 case "guardar":
                     this.titulo = "registrar persona";
                     accion = 0;
-                    // this.limpiar();
+                    this.limpiar();
                     break;
                 case "editar":
                     this.titulo = "editar persona";
@@ -207,7 +207,7 @@ export default {
             this.modal = 0;
         },
         limpiar(){
-            this.nombre = "";
+            // this.nombre = "";
         }
     },
     mounted(){

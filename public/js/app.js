@@ -50089,7 +50089,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 case "guardar":
                     this.titulo = "registrar persona";
                     accion = 0;
-                    // this.limpiar();
+                    this.limpiar();
                     break;
                 case "editar":
                     this.titulo = "editar persona";
@@ -50109,7 +50109,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.modal = 0;
         },
         limpiar: function limpiar() {
-            this.nombre = "";
+            // this.nombre = "";
         }
     },
     mounted: function mounted() {
