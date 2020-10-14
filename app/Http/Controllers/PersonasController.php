@@ -11,7 +11,7 @@ class PersonasController extends Controller
     public function index()
     {
         $personas=Personas::join('areas','personas.id_area','=','areas.id')
-        ->select('personas.id','personas.nombre','personas.apellidos','areas.nombre as nomArea')
+        ->select('personas.id','personas.cc','personas.nombre','personas.apellidos','personas.id_area','areas.nombre as nomArea')
         ->orderBy('nombre','asc')->get();
         return[           
             'personas'=>$personas
