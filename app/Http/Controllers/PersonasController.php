@@ -38,4 +38,3 @@ class PersonasController extends Controller
         $personas->delete();
     }
 }
-
