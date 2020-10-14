@@ -1,6 +1,4 @@
 
-
-
 <template>
     <main class="main">
         <ol class="breadcrumb">
@@ -189,7 +187,7 @@ export default {
                 case "guardar":
                     this.titulo = "registrar persona";
                     accion = 0;
-                    this.limpiar();
+                    // this.limpiar();
                     break;
                 case "editar":
                     this.titulo = "editar persona";
@@ -216,7 +214,22 @@ export default {
         // console.log('component mounted.')
         this.getArea();
         this.listPer();
-    }
+
+        if(localStorage.cc) this.cc = localStorage.cc;
+        if(localStorage.nombre) this.nombre = localStorage.nombre;
+        if(localStorage.apellidos) this.apellidos = localStorage.apellidos;
+        },
+        watch:{
+            cc(newCc) {
+            localStorage.cc = newCc;
+            },
+            nombre(newName) {
+            localStorage.nombre = newName;
+            },
+            apellidos(newSurname) {
+            localStorage.apellidos = newSurname;
+            }
+        } 
 }
 </script>
 <style>

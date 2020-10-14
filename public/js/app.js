@@ -49999,8 +49999,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -50091,7 +50089,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 case "guardar":
                     this.titulo = "registrar persona";
                     accion = 0;
-                    this.limpiar();
+                    // this.limpiar();
                     break;
                 case "editar":
                     this.titulo = "editar persona";
@@ -50118,6 +50116,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // console.log('component mounted.')
         this.getArea();
         this.listPer();
+
+        if (localStorage.cc) this.cc = localStorage.cc;
+        if (localStorage.nombre) this.nombre = localStorage.nombre;
+        if (localStorage.apellidos) this.apellidos = localStorage.apellidos;
+    },
+
+    watch: {
+        cc: function cc(newCc) {
+            localStorage.cc = newCc;
+        },
+        nombre: function nombre(newName) {
+            localStorage.nombre = newName;
+        },
+        apellidos: function apellidos(newSurname) {
+            localStorage.apellidos = newSurname;
+        }
     }
 });
 
