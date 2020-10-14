@@ -1,43 +1,7 @@
 
 
+
 <template>
-<<<<<<< HEAD
-    <div id="app" class="container">
-    <div class="card-body">
-        <!-- <label >Nombre</label>
-        <input type="text"> -->
-        <div id="app">
-        Nombre <input v-model="nombre">
-        Apellido <input v-model="apellido">
-        </div>
-        <h5>Área</h5>
-        <select v-model="idArea" >
-            <option v-for="objeto in arrayAreas" :key="objeto.id" :value="objeto.id" v-text="objeto.nombre"></option>
-        </select>
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Área</th>
-                </tr>
-            </thead>
-            <tbody v-if="this.arrayDatos.length">
-                <tr v-for="objeto in arrayDatos" :key="objeto.id">
-                    <td v-text="objeto.nombre"></td>
-                    <td v-text="objeto.apellidos"></td>
-                    <td v-text="objeto.nomArea"></td>
-                </tr>
-            </tbody>
-            <tbody v-else>
-                <tr >
-                    <td colspan="3" >NO Existen Datos</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    </div>
-=======
     <main class="main">
         <ol class="breadcrumb">
             <i class="fa-fa-book">Home</i>
@@ -131,21 +95,15 @@
             </div>
         </div>
     </main>
->>>>>>> c9ab49a8a8b05dfecb50c2e8584957ae02aeb277
 </template>
 <script>
 export default {
     data(){
         return{
-            // name:"",
             arrayDatos:[],
             nombre: "",
-<<<<<<< HEAD
-            apellido: "",
-=======
             cc:"",
             apellidos:"",            
->>>>>>> c9ab49a8a8b05dfecb50c2e8584957ae02aeb277
             idPer: 0,
             modal: 0,
             accion: 0,
@@ -258,18 +216,7 @@ export default {
         // console.log('component mounted.')
         this.getArea();
         this.listPer();
-
-        if(localStorage.nombre) this.nombre = localStorage.nombre;
-        if(localStorage.apellido) this.apellido = localStorage.apellido;
-        },
-        watch:{
-            nombre(newName) {
-            localStorage.nombre = newName;
-            },
-            apellido(newSurname) {
-            localStorage.apellido = newSurname;
-            }
-        }   
+    }
 }
 </script>
 <style>
